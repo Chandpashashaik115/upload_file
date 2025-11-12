@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - ChatApp</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="settings-container">
+        <div class="settings-header">
+            <a href="index.html" class="back-btn">← Back</a>
+            <h1>User Settings</h1>
+        </div>
+        
+        <div class="settings-content">
+            <div class="profile-section">
+                <h2>Profile</h2>
+                <div class="error-message" id="profileErrorMessage"></div>
+                <div class="success-message" id="profileSuccessMessage"></div>
+                
+                <form id="profileForm" class="settings-form">
+                    <div class="form-group">
+                        <label for="displayName">Name</label>
+                        <input type="text" id="displayName" placeholder="Display name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="userEmail">Email</label>
+                        <input type="email" id="userEmail" disabled>
+                    </div>
+                    
+                    <button type="submit" class="settings-btn" id="updateProfileBtn">Update Profile</button>
+                </form>
+            </div>
+            
+            <div class="password-section">
+                <h2>Change Password</h2>
+                <div class="error-message" id="passwordErrorMessage"></div>
+                <div class="success-message" id="passwordSuccessMessage"></div>
+                
+                <form id="passwordForm" class="settings-form">
+                    <div class="form-group">
+                        <label for="currentPassword">Current Password</label>
+                        <input type="password" id="currentPassword" placeholder="Current password" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="newPassword">New Password</label>
+                        <input type="password" id="newPassword" placeholder="New password" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmNewPassword">Confirm New Password</label>
+                        <input type="password" id="confirmNewPassword" placeholder="Confirm new password" required>
+                    </div>
+                    
+                    <button type="submit" class="settings-btn" id="changePasswordBtn">Change Password</button>
+                </form>
+            </div>
+            
+            <div class="danger-zone">
+                <h2>Danger Zone</h2>
+                <button class="delete-account-btn" id="deleteAccountBtn">Delete Account</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/auth.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>
