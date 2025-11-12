@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatApp</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <button class="new-chat-btn" id="newChatBtn">+ New Chat</button>
+            </div>
+            
+            <div class="conversations-list" id="conversationsList">
+                <!-- Conversations will be loaded here -->
+            </div>
+            
+            <div class="sidebar-footer">
+                <div class="user-info" id="userInfo">
+                    <!-- User info will be loaded here -->
+                </div>
+                <div class="sidebar-actions">
+                    <a href="settings.html" class="settings-btn">Settings</a>
+                    <button class="logout-btn" id="logoutBtn">Logout</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chat-area">
+            <div class="chat-header">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <h2 id="currentChatTitle">New Chat</h2>
+                <button class="upload-btn" id="uploadBtn">📎</button>
+            </div>
+            
+            <div class="messages-container" id="messagesContainer">
+                <div class="welcome-message">
+                    <h3>How can I help you today?</h3>
+                    <p>Type a message to start a conversation.</p>
+                </div>
+                <!-- Messages will be loaded here -->
+            </div>
+            
+            <div class="message-input-area">
+                <form id="messageForm">
+                    <textarea 
+                        id="messageInput" 
+                        placeholder="Type your message here..." 
+                        rows="3"
+                    ></textarea>
+                    <button type="submit" id="sendBtn">
+                        <span class="send-icon">↑</span>
+                        <span class="loading-icon">⟳</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- PDF Upload Modal -->
+    <div class="modal" id="uploadModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Upload PDF Document</h3>
+                <button class="close-modal" id="closeModalBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="upload-area" id="uploadArea">
+                    <label for="pdfFile">
+                        <div class="upload-prompt">
+                            <span>Click to select or drop PDF file here</span>
+                        </div>
+                        <input type="file" id="pdfFile" accept=".pdf" hidden>
+                    </label>
+                </div>
+                <div class="upload-status" id="uploadStatus"></div>
+                <div class="selected-file" id="selectedFile"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" id="cancelUploadBtn">Cancel</button>
+                <button class="upload-btn-primary" id="confirmUploadBtn" disabled>Upload</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/upload.js"></script>
+</body>
+</html>
